@@ -50,6 +50,7 @@
 }
 
 .work__project-description {
+  /* max-width: 60ch; */
   font-size: var(--size-sm);
   color: var(--clr-slate400);
   margin: 1rem 0;
@@ -57,6 +58,10 @@
 
 .work__project-btn {
   font-size: var(--size-sm);
+}
+
+.work__project-subtitle {
+  display: none;
 }
 
 /* xs */
@@ -68,13 +73,104 @@
     font-size: var(--size-base);
     margin: 1.5rem auto;
   }
+  .work__project-title {
+    font-size: var(--size-lg);
+    margin-bottom: 1.5rem;
+  }
+  .work__project-tag {
+    font-size: var(--size-base);
+
+    margin: 1.5rem 0;
+  }
+  .work__project-description {
+    font-size: var(--size-base);
+    margin: 1.5rem 0;
+  }
+  .work__project-btn {
+    font-size: var(--size-base);
+  }
 }
 
 /* sm */
-/* @media (min-width: 640px) {} */
+@media (min-width: 640px) {
+  .work__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "image1 content1"
+      "content2 image2"
+      "image3 content3"
+      "content4 image4"
+      "image5 content5"
+      "content6 image6";
+    place-items: center;
+    /* place-items is a short-hand for justify items and align items property*/
+  }
+  /* To get the grid items in a zig-zag fashion we have to define grid-area
+   for each class of an element that need to be arranged in the grid.. 
+   also a grid-template-area is defined with the names in a zig-zag order 
+   in the container*/
+  .work__image1 {
+    grid-area: image1;
+  }
+  .work__image2 {
+    grid-area: image2;
+  }
+  .work__image3 {
+    grid-area: image3;
+  }
+
+  .work__content1 {
+    grid-area: content1;
+  }
+  .work__content2 {
+    grid-area: content2;
+  }
+  .work__content3 {
+    grid-area: content3;
+  }
+  /* end of grid area */
+  .work__project {
+    padding: 0 1rem;
+  }
+  .work__project-title {
+    display: none;
+  }
+  .work__project-tag {
+    font-size: var(--size-xs);
+    margin: 1em 0;
+  }
+  .work__project-description {
+    font-size: var(--size-xs);
+    margin: 1em 0;
+  }
+  .work__project-btn {
+    font-size: var(--size-xs);
+  }
+  .work__project:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .work__project-subtitle {
+    display: block;
+    font-size: var(--size-base);
+  }
+}
 
 /* md */
-/* @media (min-width: 768px) {} */
+@media (min-width: 768px) {
+  .work__project-tag {
+    font-size: var(--size-sm);
+  }
+  .work__project-description {
+    font-size: var(--size--sm);
+  }
+  .work__project-btn {
+    font-size: var(--size--sm);
+  }
+  .work__project-subtitle {
+    font-size: var(--size-lg);
+  }
+}
 
 /* lg */
 @media (min-width: 1024px) {
@@ -83,6 +179,18 @@
   }
   .work__description {
     font-size: var(--size-lg);
+  }
+  .work__project-tag {
+    font-size: var(--size-base);
+  }
+  .work__project-description {
+    font-size: var(--size--base);
+  }
+  .work__project-btn {
+    font-size: var(--size--base);
+  }
+  .work__project-subtitle {
+    font-size: var(--size-xl);
   }
 }
 
@@ -95,7 +203,27 @@
     font-size: var(--size-xl);
     margin: 2rem auto;
   }
+  .work__project-tag {
+    font-size: var(--size-lg);
+  }
+  .work__project-description {
+    font-size: var(--size--lg);
+  }
+  .work__project-btn {
+    font-size: var(--size--lg);
+  }
+  .work__project-subtitle {
+    font-size: var(--size-2xl);
+  }
+  .work__container {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 /* 2xl */
-/* @media (min-width: 1536px) {} */
+@media (min-width: 1536px) {
+  .work__container {
+    width: 70%;
+  }
+}
